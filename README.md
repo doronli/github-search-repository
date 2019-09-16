@@ -1,6 +1,10 @@
 # github-search-repository
  create a GitHub repositories search page using github API.
  
+ **** IMPORTANT ******
+ The project was do with visual studio 2019 with .net core,
+ .NET core session is diffrent from .NET session 
+ 
 # the project do:
 1) search and show the github repositories filter by user searched
 2) you can checked the star to saved the repository
