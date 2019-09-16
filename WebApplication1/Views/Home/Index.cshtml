@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <div class="text-center">
+        <h1 class="display-4">Search Github Repository</h1>
+        <div class="row d-flex justify-content-center mt-3">
+            <input type="text" class="form-control col-lg-4 col-md-7" ng-model="userSearch" />
+            <button class="btn btn-primary" ng-click="searchGithubRepository()">Search</button>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-lg-2 col-md-3 col-sm-4 repository" ng-repeat="repo in allGithubRepository"
+             ng-class="{shadow: hover}"
+             ng-mouseenter="hover = true"
+             ng-mouseleave="hover = false">
+            <h5 class="w-100 text-center repository-name">{{repo.name}}</h5>
+            <img src="{{repo.avatar}}" class="mx-auto d-block" width="50px" height="50px" />
+            <span class="fa fa-star w-100 text-center p-3 "
+                  ng-class="{checked: repo.isSavedRepository == 'true'}"
+                  ng-click="changeFavorite($event, repo)"></span>
+        </div>
+
+    </div>
+
+
+
+
+</div>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "github repository saved";
+
+}
+
+
+@{
+    @if (ViewBag.amountRepositorySaved == 0)
+    {
+        <h1>@ViewBag.errorMessage</h1>
+    }
+    else
+    {
+        <h1>You Have @ViewBag.amountRepositorySaved Repositories Saved</h1>
+
+        <div class="row mt-4">
+            @foreach (var repository in ViewBag.allRepositoriesSaved)
+            {
+                <div class="col-lg-2 col-md-3 col-sm-4 repository"
+                     ng-class="{shadow: hover}"
+                     ng-mouseenter="hover = true"
+                     ng-mouseleave="hover = false">
+                    <h5 class="w-100 text-center repository-name">@repository.Name</h5>
+                    <img src="@repository.ImagePath" class="mx-auto d-block" width="50px" height="50px" />
+                    <span class="fa fa-star w-100 text-center p-3 checked"></span>
+                    
+                </div>
+            }
+        </div>
+    }
+
+
+}
+
+
